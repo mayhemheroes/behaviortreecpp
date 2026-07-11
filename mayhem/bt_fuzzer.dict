@@ -1,0 +1,65 @@
+# libFuzzer dictionary for BehaviorTree.CPP's XML behavior-tree parser (bt_fuzzer).
+# Tokens are the XML scaffolding + the built-in node tag/attribute names the harness and parser
+# recognize. Helps the fuzzer reach valid tree structures faster.
+
+# XML / tree scaffolding
+"<root"
+"</root>"
+"BTCPP_format=\"4\""
+"<BehaviorTree"
+"</BehaviorTree>"
+"ID=\"MainTree\""
+"<SubTree"
+"<TreeNodesModel>"
+"</TreeNodesModel>"
+"name="
+"ID="
+
+# Control nodes
+"<Sequence"
+"</Sequence>"
+"<SequenceWithMemory"
+"<Fallback"
+"</Fallback>"
+"<Parallel"
+"<ParallelAll"
+"<ReactiveSequence"
+"<ReactiveFallback"
+"<IfThenElse"
+"<WhileDoElse"
+"<Switch"
+
+# Decorators
+"<Inverter"
+"<RetryUntilSuccessful"
+"<Repeat"
+"<Timeout"
+"<Delay"
+"<ForceSuccess"
+"<ForceFailure"
+"<KeepRunningUntilFailure"
+"<RunOnce"
+"<Precondition"
+
+# Leaf / built-in actions
+"<AlwaysSuccess"
+"<AlwaysFailure"
+"<SetBlackboard"
+"<Script"
+"<Sleep"
+
+# Common port / attribute names
+"timeout_ms="
+"delay_ms="
+"threshold="
+"num_cycles="
+"max_repeats="
+"output_key="
+"value="
+"code="
+"_skipIf="
+"_failureIf="
+"_successIf="
+"_while="
+"{"
+"}"

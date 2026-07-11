@@ -1,0 +1,8 @@
+project: behaviortreecpp
+target: bb_fuzzer
+cmds:
+  - cmd: /mayhem/bb_fuzzer
+    libfuzzer: true
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/bb_fuzzer/testsuite
